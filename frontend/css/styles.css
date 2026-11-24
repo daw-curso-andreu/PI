@@ -1,0 +1,178 @@
+/* ===== Variables (guía de estilos) ===== */
+:root {
+  --color-fondo: #f4f6fb;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2937;
+  --color-texto-suave: #6b7280;
+  --color-primario: #4f46e5;
+  --color-primario-hover: #4338ca;
+  --color-peligro: #dc2626;
+  --color-borde: #e5e7eb;
+
+  --fuente: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --radio: 10px;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  line-height: 1.5;
+}
+
+.contenedor {
+  max-width: 560px;
+  margin: 40px auto;
+  padding: 24px;
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* ===== Formulario ===== */
+.formulario {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.formulario input:focus {
+  outline: 2px solid var(--color-primario);
+  border-color: transparent;
+}
+
+/* ===== Botones ===== */
+.btn {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.btn-primario {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background: var(--color-primario-hover);
+}
+
+.btn-filtro {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 6px 12px;
+}
+
+.btn-filtro.activo {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+.btn-borrar {
+  background: transparent;
+  color: var(--color-peligro);
+  padding: 6px 10px;
+}
+
+.btn-borrar:hover {
+  background: #fee2e2;
+}
+
+/* ===== Filtros ===== */
+.filtros {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* ===== Lista ===== */
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.tarea input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.tarea .titulo {
+  flex: 1;
+}
+
+.tarea.hecha .titulo {
+  text-decoration: line-through;
+  color: var(--color-texto-suave);
+}
+
+.mensaje {
+  text-align: center;
+  color: var(--color-texto-suave);
+}
+
+.mensaje.error {
+  color: var(--color-peligro);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .contenedor {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+}
+
+/* ===== Editar tarea ===== */
+.btn-editar {
+  background: transparent;
+  color: var(--color-primario);
+  padding: 6px 10px;
+}
+
+.btn-editar:hover {
+  background: var(--color-fondo);
+}
+
+.campo-editar {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--color-primario);
+  border-radius: var(--radio);
+}

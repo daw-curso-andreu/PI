@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <h1>Lista de tareas</h1>
+
+      <form id="form-tarea" class="formulario">
+        <input
+          type="text"
+          id="input-titulo"
+          placeholder="¿Qué tienes que hacer?"
+          maxlength="120"
+          required
+        />
+        <button type="submit" class="btn btn-primario">Añadir</button>
+      </form>
+
+      <div class="filtros" id="filtros">
+        <button class="btn btn-filtro activo" data-filtro="todas">Todas</button>
+        <button class="btn btn-filtro" data-filtro="pendientes">Pendientes</button>
+        <button class="btn btn-filtro" data-filtro="hechas">Hechas</button>
+      </div>
+
+      <p id="mensaje" class="mensaje" hidden></p>
+
+      <ul id="lista-tareas" class="lista"></ul>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
